@@ -1,0 +1,13 @@
+services : 
+  module-app :
+    container_name : module-app
+    image :  module-app:v1
+    build : 
+      context : .
+    ports :  
+      - "401:401"
+    networks : 
+      module-web:
+
+networks :
+  module-web:
