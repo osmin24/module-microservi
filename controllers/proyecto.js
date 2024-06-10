@@ -7,6 +7,7 @@ const Universidad = require('../modules/universidad')
 
 const getProyecto = async (req=request,res=response) => {
     try{
+        console.info('Solicitu operando...')
         const data = await Proyecto.find().populate({
             path:'cliente'
         }).populate({
