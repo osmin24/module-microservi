@@ -5,9 +5,19 @@ services :
     build : 
       context : .
     ports :  
-      - "401:401"
+      - "402"
     networks : 
       module-web:
 
+  balanceador :
+    container_name : balanceador
+    image :  balanceador:v1
+    build : 
+      context : ./balanceador
+    ports :  
+      - "403:80"
+    networks : 
+      module-web:
+    
 networks :
   module-web:
